@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Form Validation</title>
+</head>
+
+<body>
+    <div class="form-div">
+        <form class="form-class" id="form">
+            <div class="form-cotrol">
+                <label>Name</label>
+                <input class="name-input" id="username" type="text" placeholder="Name" onclick="unsetMessage(this.id)">
+                <span class="validation-message" id="username-message"></span>
+            </div>
+            <div class="form-control">
+                <label>Email</label>
+                <input class="email-input" id="email" type="text" placeholder="Email" onclick="unsetMessage(this.id)">
+                <span class="validation-message" id="email-message"></span>
+            </div>
+            <div class="form-control">
+                <label>Phone</label>
+                <input class="phone-input" id="phone" type="text" inputmode="numeric" placeholder="Phone"
+                    onclick="unsetMessage(this.id)">
+                <span class="validation-message" id="phone-message"></span>
+            </div>
+            <div class="form-control">
+                <label>Technology</label>
+                <select class="tech-select" id="technology" onclick="unsetMessage(this.id)">
+                    <option value="none">Select</option>
+                    <option value="NodeJS">NodeJS</option>
+                    <option value="ReactJS">ReactJS</option>
+                    <option value="Angular">Angular</option>
+                    <option value="ASP.NET">ASP.NET</option>
+                    <option value="Data Science">Data Science</option>
+                    <option value="Big Data">Big Data</option>
+                </select>
+                <span class="validation-message" id="technology-message"></span>
+            </div>
+            <div class="form-control">
+                <label>Skills</label>
+                <div class="skill-select">
+                    <div class="skill-select-dropdown" id="skills" onclick="dropdownMenu(), unsetMessage(this.id)">
+                        <span class="select-text">Select</span>
+                        <span class="select-arrow"></span>
+                    </div>
+                    <div class="ul-container" id="skills-list" style="display: none;">
+                        <ul class="ul-class">
+                            <li class="li-class" onclick="addSkill(event)">NodeJS</li>
+                            <li class="li-class" onclick="addSkill(event)">ReactJS</li>
+                            <li class="li-class" onclick="addSkill(event)">Angular</li>
+                            <li class="li-class" onclick="addSkill(event)">ASP.NET</li>
+                            <li class="li-class" onclick="addSkill(event)">Data Science</li>
+                            <li class="li-class" onclick="addSkill(event)">Big Data</li>
+                        </ul>
+                    </div>
+                </div>
+                <span class="validation-message" id="skills-message"></span>
+            </div>
+            <div class="form-control">
+                <input class="termsCheck-input" type="checkbox" id="termsCheck" onclick="unsetMessage(this.id)">
+                <label>Terms & Conditions</label>
+                <span class="validation-message" id="termsCheck-message"></span>
+            </div>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+    <script src="scripts.js"></script>
+</body>
+
+</html>
