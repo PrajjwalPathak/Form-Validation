@@ -5,7 +5,7 @@ form.addEventListener("submit", (event) => {
 
 // Validation Message
 const unsetMessage = (elementId) => {
-	document.getElementById(elementId + "-message").innerText = "";
+	document.getElementById(elementId + "-message").innerText = " ";
 };
 
 const setMessage = (control, message) => {
@@ -14,8 +14,9 @@ const setMessage = (control, message) => {
 };
 
 // Select Skills
+let divDropdown = document.getElementById("skills-list");
+
 const dropdownMenu = () => {
-	let divDropdown = document.getElementById("skills-list");
 	divDropdown.style.display =
 		divDropdown.style.display === "none" ? "block" : "none";
 };
