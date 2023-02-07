@@ -7,12 +7,22 @@
 	font-family: "Poppins", sans-serif;
 }
 
-.form-div {
+body {
+	background-color: rgb(155, 48, 255);
 	width: 100vw;
 	height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.form-div {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 3rem 3rem 1rem 3rem;
+	border-radius: 10px;
+	background-color: rgba(255, 255, 255, 0.5);
 }
 
 .form-class {
@@ -72,6 +82,7 @@
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
+	background-color: white;
 }
 
 .ul-class {
@@ -116,7 +127,7 @@
 }
 
 .blue-color {
-	background-color: rgb(166, 166, 255);
+	background-color: rgb(225, 193, 255);
 }
 
 .btn-sub {
