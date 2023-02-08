@@ -15,8 +15,8 @@
         <form class="form-class" id="form">
             <div class="form-control">
                 <div class="label-input-class">
-                    <label>Name</label>
-                    <input class="name-input input" id="username" type="text" onclick="unsetMessage(this.id)">
+                    <label>Username</label>
+                    <input class="name-input input" id="username" type="text" onfocus="unsetMessage(this.id)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="username-message"></span>
@@ -25,7 +25,7 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Email</label>
-                    <input class="email-input input" id="email" type="text" onclick="unsetMessage(this.id)">
+                    <input class="email-input input" id="email" type="text" onfocus="unsetMessage(this.id)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="email-message"></span>
@@ -35,7 +35,7 @@
                 <div class="label-input-class">
                     <label>Phone</label>
                     <input class="phone-input input" id="phone" type="text" inputmode="numeric"
-                        onclick="unsetMessage(this.id)">
+                        onfocus="unsetMessage(this.id)">
                 </div>
                 <div class="span-class">
                     <span class="validation-message" id="phone-message"></span>
@@ -44,7 +44,7 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Technology</label>
-                    <select class="input" id="technology" onclick="unsetMessage(this.id)">
+                    <select class="input" id="technology" onfocus="unsetMessage(this.id)">
                         <option value="none">Select</option>
                         <option value="NodeJS">NodeJS</option>
                         <option value="ReactJS">ReactJS</option>
@@ -61,14 +61,14 @@
             <div class="form-control">
                 <div class="label-input-class">
                     <label>Skills</label>
-                    <div class="skill-select">
-                        <div class="skill-select-dropdown input" id="skills"
+                    <div class="skill-select-container">
+                        <div class="skills-dropdown input" id="skills-dropdown"
                             onclick="dropdownMenu(), unsetMessage(this.id)">
                             <span class="select-text">Select</span>
                             <i class="fa fa-chevron-down arrow" style="font-size:10px"></i>
                         </div>
-                        <div class="ul-container" id="skills-list" style="display: none;">
-                            <ul class="ul-class">
+                        <div class="skills-list" id="skills-list">
+                            <ul class="skills-ul" id="skills-ul">
                                 <li class="li-class" onclick="addSkill(event)">NodeJS</li>
                                 <li class="li-class" onclick="addSkill(event)">ReactJS</li>
                                 <li class="li-class" onclick="addSkill(event)">Angular</li>
@@ -80,12 +80,12 @@
                     </div>
                 </div>
                 <div class="span-class">
-                    <span class="validation-message" id="skills-message"></span>
+                    <span class="validation-message" id="skills-dropdown-message"></span>
                 </div>
             </div>
             <div class="form-control">
                 <div class="label-input-class terms-class">
-                    <input class="termsCheck-input" type="checkbox" id="termsCheck" onclick="unsetMessage(this.id)">
+                    <input class="termsCheck-input" type="checkbox" id="termsCheck" onfocus="unsetMessage(this.id)">
                     <label class="terms-label-class">I agree to all the Terms and Conditions.</label>
                 </div>
                 <div class="span-class">

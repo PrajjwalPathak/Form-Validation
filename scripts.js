@@ -5,7 +5,8 @@ form.addEventListener("submit", (event) => {
 
 // Validation Message
 const unsetMessage = (elementId) => {
-	document.getElementById(elementId + "-message").innerText = " ";
+	const msg = "";
+	document.getElementById(elementId + "-message").innerText = msg;
 };
 
 const setMessage = (control, message) => {
@@ -17,9 +18,16 @@ const setMessage = (control, message) => {
 let divDropdown = document.getElementById("skills-list");
 
 const dropdownMenu = () => {
-	divDropdown.style.display =
-		divDropdown.style.display === "none" ? "block" : "none";
+	divDropdown.classList.toggle("show");
 };
+
+// window.onclick = (event) => {
+// 	if (event.target != document.getElementById("skills-dropdown") && event.target != document.getElementsByClassName("li-class")) {
+// 		if (divDropdown.classList.contains("show")) {
+// 			divDropdown.classList.remove("show");
+// 		}
+// 	}
+// };
 
 let allSkills = [];
 
@@ -44,8 +52,8 @@ const validateForm = () => {
 	const technology = document.getElementById("technology").value;
 	const termsCheck = document.getElementById("termsCheck").checked;
 
-	// Validate Name
-	const checkName = /^[A-Za-z]+$/;
+	// Validate Username
+	const checkName = /^[A-Za-z0-9_]+$/;
 	if (username == "") {
 		setMessage("username", "Please write your Name");
 	} else if (!username.match(checkName)) {
@@ -98,15 +106,28 @@ const validateForm = () => {
 	}
 
 	// If everything is validated then the data is ready to use
+	// Data is stored in the local storage
 	if (success == 6) {
-		alert("Form Submitted Successfully");
-		console.log({
+		const userData = {
 			username,
 			email,
 			phone,
 			technology,
 			allSkills,
 			termsCheck,
-		});
+		};
+
+		// Converting JSON data to string because local storage can only store string data
+		const serialized_userData = JSON.stringify(userData);
+		localStorage.setItem(userData.username, serialized_userData);
+
+		// Converting string data back to JSON data to get the user data from the local storage
+		const deserialized_userData = JSON.parse(
+			localStorage.getItem(userData.username)
+		);
+		console.log(deserialized_userData);
+		alert("Form Submitted Successfully");
+
+		//location.reload();
 	}
 };
